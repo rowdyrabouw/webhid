@@ -14,3 +14,11 @@ requestDeviceButton.onclick = async () => {
     log(`[window] Requested HID device "${device.productName}"`);
   }
 };
+
+navigator.hid.onconnect = ({ device }) => {
+  log(`[window] Connected HID device "${device.productName}"`);
+};
+
+navigator.hid.ondisconnect = ({ device }) => {
+  log(`[window] Disonnected HID device "${device.productName}"`);
+};
